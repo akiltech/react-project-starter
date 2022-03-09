@@ -42,7 +42,8 @@
     "validate": "npm-run-all --parallel check-types && lint-staged",
     "lint": "eslint --fix --ext .js,.ts,.tsx ./src --ignore-path .gitignore",
     "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js|json|ts|tsx)\"",
-    "format": "npm run prettier -- --write"
+    "format": "npm run prettier -- --write",
+    "generate:component": "plop"
   },
   "eslintConfig": {
     "extends": [
@@ -104,6 +105,7 @@
     "is-ci-cli": "^2.2.0",
     "lint-staged": "^12.3.5",
     "npm-run-all": "^4.1.5",
+    "plop": "^3.0.5",
     "webpack": "^5.70.0"
   },
   "config": {
