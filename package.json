@@ -36,6 +36,7 @@
     "commit": "cz",
     "prepare": "is-ci || (husky install && chmod ug+x .husky/pre-commit)",
     "check-types": "tsc --project tsconfig.json --pretty --noEmit",
+    "lint-staged": "lint-staged",
     "check-format": "npm run prettier -- --list-different",
     "validate-and-build": "npm-run-all --parallel check-types check-format lint build",
     "validate": "npm-run-all --parallel check-types && lint-staged",
@@ -72,6 +73,8 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-interactions": "^6.4.19",
@@ -103,15 +106,14 @@
     "npm-run-all": "^4.1.5",
     "webpack": "^5.70.0"
   },
-  "husky": {
-    "hooks": {
-      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
-      "pre-commit": "npm run format && npm run validate"
-    }
-  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "lint-staged": {
+    "*.+(ts|tsx)": [
+      "npm run lint"
+    ]
   }
 }
