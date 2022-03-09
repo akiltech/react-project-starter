@@ -106,7 +106,7 @@
   "husky": {
     "hooks": {
       "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
-      "pre-commit": "npm run format"
+      "pre-commit": "npm run format && npm run validate"
     }
   },
   "config": {
