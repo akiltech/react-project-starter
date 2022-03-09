@@ -4,12 +4,12 @@ module.exports = {
     {
       type: 'input',
       name: 'name',
-      message: 'What is your component name',
+      message: 'What is your component name ?',
     },
     {
       type: 'input',
       name: 'folder',
-      message: 'folder in components',
+      message: 'folder in components (optional)',
     },
   ],
   actions: [
@@ -17,6 +17,7 @@ module.exports = {
       type: 'add',
       path: 'src/components/{{folder}}/{{pascalCase name}}/index.tsx',
       templateFile: 'generators/component/index.ts.hbs',
+      skipIfExists: true,
     },
     {
       type: 'add',
