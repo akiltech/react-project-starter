@@ -17,7 +17,6 @@
     "jsx": "react-jsx"
   },
   "include": ["src", "generators"],
-  "baseUrl": "./src",
   "exclude": ["node_modules"],
   "extends": "./tsconfig.paths.json"
 }
