@@ -46,10 +46,6 @@
     "generate:component": "plop"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ],
     "overrides": [
       {
         "files": [
