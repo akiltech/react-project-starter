@@ -9,7 +9,7 @@ module.exports = {
   extends: ['eslint:recommended'],
   overrides: [
     {
-      files: ['**/*.ts', '**/*.tsx'],
+      files: ['**/*.ts', '**/*.tsx', '**/*.j[s, sx]'],
       parser: '@typescript-eslint/parser',
       settings: {
         react: { version: 'detect' },
@@ -69,6 +69,31 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': ['off'],
 
         'prettier/prettier': ['error', {}, { usePrettierrc: true }],
+        'no-new-object': ['error'],
+        'object-shorthand': ['error'],
+        'prefer-object-spread': ['error'],
+        'prefer-destructuring': [
+          'error',
+          {
+            array: true,
+            object: true,
+          },
+          {
+            enforceForRenamedProperties: false,
+          },
+        ],
+        'prefer-template': 'error',
+        'no-eval': 'error',
+        'no-useless-escape': 'error',
+        'no-loop-func': 'error',
+        'prefer-rest-params': 'error',
+        'default-param-last': ['error'],
+        'no-new-func': 'error',
+        'no-param-reassign': 'error',
+        'no-multi-assign': 'error',
+        'no-plusplus': 'error',
+        'no-else-return': 'error',
+        'spaced-comment': ['error', 'always', { exceptions: ['-', '+', '///'] }],
       },
     },
   ],
